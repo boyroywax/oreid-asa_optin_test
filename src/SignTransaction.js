@@ -42,12 +42,24 @@ export const SignTransaction = () => {
             genesisHash: "SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI="
         }
     
+        // Simple ALGO Native token transfer
+        // 
+        // const transactionBody = {
+        //     from: signingAccount.chainAccount,
+        //     to: "45T7X33ZCNYREXX2HMF25FCCPB4ZN3MZCTZFOA7GI7MT6TOG6RDIGGSYX4",
+        //     amount: 1000000,
+        //     // suggestedParams,
+        //     type: "pay"
+        // };
+
+        // ASA Opt-in Transaction for USDC
+        // 
         const transactionBody = {
             from: signingAccount.chainAccount,
             to: signingAccount.chainAccount,
-            // assetIndex: 10458941,
-            amount: 0.00,
-            suggestedParams,
+            assetIndex: 10458941,
+            amount: 0,
+            // suggestedParams,
             type: "axfer"
         };
 

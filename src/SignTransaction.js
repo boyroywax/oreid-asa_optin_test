@@ -34,11 +34,21 @@ export const SignTransaction = () => {
             onError( errorMsg )
             return;
         };
+
+        const suggestedParams = {
+            fee: 10,
+            firstRound: 1000,
+            lastRound: 2000,
+            genesisHash: "SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI="
+        }
     
         const transactionBody = {
             from: signingAccount.chainAccount,
             to: signingAccount.chainAccount,
-            value: 0
+            // assetIndex: 10458941,
+            amount: 0.00,
+            suggestedParams,
+            type: "axfer"
         };
 
         const transaction = await oreId.createTransaction({
